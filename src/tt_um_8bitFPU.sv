@@ -1,4 +1,4 @@
-module tt_um_fp8_fpu (
+module tt_um_8bitFPU (
     input  logic [7:0] ui_in,    // Dedicated inputs
     output logic [7:0] uo_out,   // Dedicated outputs
     input  logic [7:0] uio_in,   // IOs: Input path
@@ -40,7 +40,7 @@ module tt_um_fp8_fpu (
     end
 
     // --- Instantiate your FPU ---
-    fp8_fpu_e4m3 fpu_inst (
+    tt_um_8bitFPU fpu_inst (
         .clock(clk),
         .reset(!rst_n), // Convert active-low to active-high for your design [cite: 196]
         .valid_in(load_valid),
