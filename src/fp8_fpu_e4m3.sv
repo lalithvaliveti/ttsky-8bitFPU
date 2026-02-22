@@ -75,7 +75,7 @@ module fp8_fpu_e4m3 (
         fma_c = operand_c;
         fma_valid_in = 1'b0;
         div_valid_in = 1'b0;
-        sqrt_valid_in = 1'b0;
+       
 
         case (opcode)
             OP_ADD: begin
@@ -186,13 +186,7 @@ module fp8_fpu_e4m3 (
             overflow = div_overflow;
             underflow = div_underflow;
             div_by_zero = div_by_zero_sig;
-        end else if (sqrt_valid_out) begin
-            result = sqrt_result;
-            valid_out = sqrt_valid_out;
-            overflow = 1'b0;
-            underflow = 1'b0;
-            invalid_op = sqrt_invalid_op;
-        end
+        end 
     end
 
 endmodule
