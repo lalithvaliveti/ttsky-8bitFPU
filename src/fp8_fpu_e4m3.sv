@@ -64,11 +64,6 @@ module fp8_fpu_e4m3 (
     logic       div_overflow, div_underflow;
     logic       div_by_zero_sig;
     
-    // SQRT unit signals
-    logic       sqrt_valid_in;
-    logic [7:0] sqrt_result;
-    logic       sqrt_valid_out;
-    logic       sqrt_invalid_op;
 
     //=========================================================================
     // Operation Decode and Input Multiplexing
