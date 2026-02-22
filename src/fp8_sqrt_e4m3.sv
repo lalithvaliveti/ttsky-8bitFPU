@@ -38,6 +38,7 @@ module fp8_sqrt_e4m3 (
     logic        is_nan_s1;
     logic        is_neg_s1;
     logic        valid_s1;
+    
 
     // Stage 2: Compute square root
     logic        is_special_s2;
@@ -47,10 +48,18 @@ module fp8_sqrt_e4m3 (
     logic        invalid_op_s2;
     logic        valid_s2;
 
+    // Signals for Stage 2 computation
+    logic [4:0] exp_biased;
+    logic [3:0] mant_extended;
+    logic [7:0] radicand;
+
     // Stage 3: Normalize and round
     logic [7:0]  result_s3;
     logic        invalid_op_s3;
     logic        valid_s3;
+    // Signals for Stage 3
+    logic [2:0] mant_final;
+    logic [3:0] exp_final;
 
     // Stage 4: Output register (for consistent 4-cycle latency with FMA)
     logic [7:0]  result_s4;
@@ -118,10 +127,7 @@ module fp8_sqrt_e4m3 (
                 special_result_s2 <= FP8_INF_POS;
             end else begin
                 // Normal square root
-                // Declare variables first
-                logic [4:0] exp_biased;
-                logic [3:0] mant_extended;
-                logic [7:0] radicand;
+
                 
                 is_special_s2 <= 1'b0;
                 
@@ -195,9 +201,6 @@ module fp8_sqrt_e4m3 (
                 result_s3 <= special_result_s2;
             end else begin
                 // Normalize and extract mantissa
-                // Declare variables first
-                logic [2:0] mant_final;
-                logic [3:0] exp_final;
                 
                 exp_final = exp_result_s2;
                 
