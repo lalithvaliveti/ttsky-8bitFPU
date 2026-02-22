@@ -40,7 +40,7 @@ module tt_um_8bitFPU (
     end
 
     // --- Instantiate your FPU ---
-    tt_um_8bitFPU fpu_inst (
+    fp8_fpu_e4m3 fpu_inst (
         .clock(clk),
         .reset(!rst_n), // Convert active-low to active-high for your design [cite: 196]
         .valid_in(load_valid),
