@@ -170,15 +170,7 @@ module fp8_fpu_e4m3 (
     //=========================================================================
     // SQRT Core Instantiation
     //=========================================================================
-    fp8_sqrt_e4m3 u_sqrt (
-        .clock      (clock),
-        .reset      (reset),
-        .valid_in   (sqrt_valid_in),
-        .a          (operand_a),
-        .result     (sqrt_result),
-        .valid_out  (sqrt_valid_out),
-        .invalid_op (sqrt_invalid_op)
-    );
+   
 
     //=========================================================================
     // Output Multiplexing
