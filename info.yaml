@@ -21,7 +21,6 @@ project:
     - "fp8_fpu_e4m3.sv"
     - "fp8_fma_e4m3.sv"
     - "fp8_div_e4m3.sv"
-    - "fp8_sqrt_e4m3.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
