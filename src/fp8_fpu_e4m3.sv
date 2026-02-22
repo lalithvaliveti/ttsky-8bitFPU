@@ -117,7 +117,6 @@ module fp8_fpu_e4m3 (
 
             OP_SQRT: begin
                 // SQRT: sqrt(a)
-                sqrt_valid_in = valid_in;
             end
 
             default: begin
