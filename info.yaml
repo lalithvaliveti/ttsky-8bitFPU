@@ -17,7 +17,7 @@ project:
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
-    - "tt_um_fp8_fpu.sv"
+    - "tt_um_8bitFPU.sv"
     - "fp8_fpu_e4m3.sv"
     - "fp8_fma_e4m3.sv"
     - "fp8_div_e4m3.sv"
